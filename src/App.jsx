@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import List from './components/list/List';
 import Chat from './components/chat/Chat';
 import Details from './components/details/Details';
@@ -11,20 +11,22 @@ import { useChatStore } from './lib/chatStore';
 
 const App = () => {
   const { currentUser, isLoading, fetchUserInfo } = useUserStore();
-   const {chatId}=useChatStore();
+  const { chatId, resetChat } = useChatStore();
+
   useEffect(() => {
     const unSub = onAuthStateChanged(auth, (user) => {
       if (user) {
         fetchUserInfo(user.uid);
       } else {
-        fetchUserInfo(null);  // Clear user state if not logged in
+        resetChat();  // Clear chat state on logout
+        fetchUserInfo(null);
       }
     });
 
     return () => {
       unSub();
     };
-  }, [fetchUserInfo]);
+  }, [fetchUserInfo, resetChat]);
 
   if (isLoading) return <div className="loading">Loading...</div>;
 
@@ -33,8 +35,8 @@ const App = () => {
       {currentUser ? (
         <>
           <List />
-         {chatId && <Chat />}
-         {chatId && <Details />}  
+          {chatId && <Chat />}
+          {chatId && <Details />}
         </>
       ) : (
         <Login />

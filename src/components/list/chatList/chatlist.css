@@ -70,3 +70,20 @@
     font-size: 14px;
     font-weight: 300;
 }
+/* Seen Chat Item */
+/* Original Background for Seen Messages */
+.item.seen {
+    background-color: rgba(17, 25, 40, 0.2); /* Original light background */
+    opacity: 0.8;
+}
+
+/* Blue Background for Unseen Messages */
+.item.unseen {
+    background-color: rgba(0, 123, 255, 0.7); /* Blue background for unseen messages */
+    opacity: 1;
+}
+
+.texts .seen-status {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6); /* Lighter color for seen status */
+}
