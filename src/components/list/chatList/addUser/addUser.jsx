@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './addUser.css';
+import './adduser.css';
 import { arrayUnion, collection, getDocs, query, serverTimestamp, setDoc, updateDoc, where } from 'firebase/firestore';
 import { db } from '../../../../lib/firebase';
 import { doc } from 'firebase/firestore';
