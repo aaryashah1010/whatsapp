@@ -1,0 +1,136 @@
+.detail {
+    flex: 1;
+    background: rgba(30, 30, 45, 0.7); /* Translucent dark gradient */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    backdrop-filter: blur(10px); /* Smooth blurred background */
+    overflow: hidden; /* Prevents overflow */
+}
+
+.detail .user {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.user img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.info {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    max-height: calc(100vh - 180px); /* Keeps it within the viewport */
+}
+
+.option {
+    background-color: rgba(50, 50, 75, 0.4);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.option .title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    white-space: nowrap; /* Prevents text from wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Shows "..." if text is too long */
+}
+
+.option img {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.option:hover {
+    background-color: rgba(60, 60, 90, 0.6);
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.photos .photoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(60, 60, 90, 0.4);
+    border-radius: 8px;
+    margin-bottom: 5px;
+    width: 100%; /* Ensure full width */
+}
+
+.photoItem .photoDetail {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increased gap between image and text */
+    flex: 1; /* Make photo detail take up available space */
+}
+
+.photoItem .photoDetail img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.photoItem .photoDetail span {
+    font-size: 14px;
+    color: lightgray;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px; /* Increased width for better text visibility */
+}
+
+.photos .photoItem img {
+    width: 24px; /* Increased size for better visibility */
+    height: 24px;
+    cursor: pointer;
+}
+
+button {
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+}
+
+button:hover {
+    background-color: #e04343;
+}
+
+.logout {
+    padding: 10px;
+    background-color: blue;
+}

@@ -1,0 +1,284 @@
+.chat {
+    flex: 2;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1e1e2d;
+}
+
+.top {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.texts span {
+    font-weight: bold;
+    color: white;
+}
+
+.texts p {
+    font-size: 14px;
+    color: #b3b3b3;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}
+
+.icons img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.bottom {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.bottom .icons {
+    display: flex;
+    gap: 20px;
+}
+
+.bottom input {
+    flex: 1;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.emoji {
+    position: relative;
+}
+
+.emoji img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.emoji-picker {
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    z-index: 1000;
+    background-color: #292b3d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.emoji-picker-react {
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    background-color: #292b3d;
+    color: white;
+}
+
+.sendButton {
+    background-color: #5183fe;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.sendButton:hover {
+    background-color: #3a6ad9;
+}
+
+.sendButton:active {
+    transform: scale(0.98);
+}
+
+.sendButton:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+.center {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #1e1e2d;
+}
+
+.center .message {
+    max-width: 70%;
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+}
+
+.center .own {
+    align-self: flex-end;
+    background-color: #3a6ad9;
+    border-radius: 10px 10px 0 10px;
+}
+
+.center .message img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.center .texts {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: #292b3d;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.center .own .texts {
+    background-color: #5183fe;
+    color: white;
+}
+
+.center .texts p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.center .texts span {
+    font-size: 10px;
+    color: #b3b3b3;
+    margin-top: 5px;
+    text-align: right;
+}
+
+.uploaded-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.bottom label {
+    cursor: pointer;
+}
+
+.bottom img {
+    margin: 0 5px;
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 768px) {
+    .uploaded-image {
+        max-width: 500px;
+        height: auto;
+    }
+}
+
+/* Adjust image spacing for own messages */
+.message.own .uploaded-image {
+    margin-right: 10px;
+    margin-left: auto;
+}
+.cameraView {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.cameraFeed {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.preview img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.preview button {
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+.call-icon {
+    margin-left: auto;
+    cursor: pointer;
+}
+.video-call {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.endCallButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
